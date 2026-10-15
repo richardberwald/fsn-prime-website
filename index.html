@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FSN Prime | Het platform voor zelfstandige recruiters</title>
+<meta name="description" content="FSN Prime is het platform voor recruiters die hun eigen business willen bouwen, zonder alles zelf op te zetten. Onderdeel van Financial Systems Network.">
+<meta property="og:title" content="FSN Prime | Own your book. Grow your share.">
+<meta property="og:description" content="Bouw je eigen recruitmentbusiness, zonder alles zelf op te bouwen.">
+<meta property="og:image" content="assets/team.jpg">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0F1F3D; --navy-2:#162B52; --sky:#4FB3E0; --violet:#8B7BD8; --green:#7FAD57; --gold:#D1A637;
+  --line:#D7D977; --ink:#0F1F3D; --muted:#4A5873; --mist:#EEF3F8; --paper:#FFFFFF; --rule:#D5DDE8;
+  --wrap:1160px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;font-family:"Archivo",system-ui,sans-serif;font-variation-settings:"wdth" 100;color:var(--ink);background:var(--paper);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--sky);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-weight:800;line-height:1.08;letter-spacing:-.01em;margin:0}
+h1{font-size:clamp(2.3rem,5.2vw,4.3rem);font-variation-settings:"wdth" 112}
+h2{font-size:clamp(1.9rem,3.6vw,2.9rem);font-variation-settings:"wdth" 108;max-width:20ch}
+h3{font-size:1.25rem;font-variation-settings:"wdth" 104}
+p{margin:0 0 1em;max-width:62ch}
+.lead{font-size:1.2rem;color:var(--muted)}
+section{padding:104px 0}
+.prime-label{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:var(--sky);margin:0 0 18px}
+
+/* header + hero */
+.hero{background:var(--navy);color:#fff;position:relative;border-bottom:4px solid var(--line)}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.lockup{background:#fff;padding:10px 16px;border-radius:6px;display:inline-block}
+.lockup img{height:44px;width:auto}
+.topbar nav{display:flex;gap:28px;font-size:.95rem}
+.topbar nav a{text-decoration:none;color:#C9D4E6}
+.topbar nav a:hover{color:#fff}
+.btn{display:inline-block;background:var(--sky);color:var(--navy);font-weight:700;text-decoration:none;padding:15px 26px;border-radius:6px;font-size:1rem}
+.btn:hover{background:#6CC2E8}
+.btn.ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px #3A5584}
+.btn.ghost:hover{box-shadow:inset 0 0 0 2px var(--sky)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:end;padding:56px 0 0}
+.hero-copy{padding-bottom:88px}
+.hero-copy .lead{color:#C9D4E6;margin-top:24px;font-size:1.25rem}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.hero-photo{align-self:stretch;display:flex;align-items:flex-end}
+.hero-photo img{width:100%;height:auto;max-height:600px;object-fit:cover;object-position:center 30%;border-radius:8px 8px 0 0}
+.campaign{font-size:1rem;color:var(--sky);font-weight:700;letter-spacing:.02em;margin-bottom:22px}
+
+/* problem */
+.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.burden{list-style:none;padding:0;margin:8px 0 0;border-top:1px solid var(--rule)}
+.burden li{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--rule)}
+.burden span:last-child{color:var(--muted);text-align:right}
+.stat{margin-top:40px;padding:28px 0 0;border-top:1px solid var(--rule)}
+.stat strong{display:block;font-size:3.4rem;line-height:1;font-variation-settings:"wdth" 118;font-weight:800}
+.stat small{color:var(--muted);font-size:.9rem}
+
+/* two ways */
+.ways{background:var(--mist)}
+.ways-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:48px}
+.way{background:#fff;border-radius:8px;padding:36px;border-top:6px solid var(--sky)}
+.way.free{border-top-color:var(--violet)}
+.way h3{font-size:1.6rem;margin-bottom:6px}
+.way .for{color:var(--muted);margin-bottom:22px}
+.way ul{padding:0;margin:0;list-style:none}
+.way li{padding:10px 0 10px 26px;border-top:1px solid var(--rule);position:relative}
+.way li::before{content:"";position:absolute;left:2px;top:20px;width:10px;height:10px;border-radius:50%;background:var(--sky)}
+.way.free li::before{background:var(--violet)}
+
+/* model */
+.model-head{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:end}
+.ladder{margin-top:56px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;align-items:end;height:340px}
+.step{background:var(--navy);color:#fff;border-radius:8px 8px 0 0;padding:20px;display:flex;flex-direction:column;justify-content:space-between}
+.step:nth-child(1){height:54%;background:#2A4472}
+.step:nth-child(2){height:66%;background:#1F3866}
+.step:nth-child(3){height:80%;background:#172D57}
+.step:nth-child(4){height:100%}
+.step b{font-size:clamp(2rem,4.4vw,3.6rem);line-height:1;font-variation-settings:"wdth" 120}
+.step span{font-size:.92rem;color:#C9D4E6}
+.ladder-base{border-top:4px solid var(--line);padding-top:14px;color:var(--muted);font-size:.95rem}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:64px}
+.facts h3{margin-bottom:10px}
+.facts p{color:var(--muted);font-size:1rem}
+.example{margin-top:56px;background:var(--mist);border-radius:8px;padding:30px 34px;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
+.example table{border-collapse:collapse;width:100%;font-size:1rem}
+.example td{padding:8px 0;border-bottom:1px solid var(--rule)}
+.example td:last-child{text-align:right;font-weight:700}
+.example .note{font-size:.88rem;color:var(--muted);margin:10px 0 0}
+
+/* infrastructure */
+.infra{background:var(--navy);color:#fff}
+.infra .lead{color:#C9D4E6}
+.infra-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:48px;border-top:1px solid #2C4470}
+.infra-grid div{padding:26px 26px 26px 0;border-bottom:1px solid #2C4470}
+.infra-grid h3{font-size:1.1rem;margin-bottom:6px}
+.infra-grid p{color:#AEBCD3;font-size:.98rem;margin:0}
+
+/* compare */
+.compare-wrap{overflow-x:auto;margin-top:44px}
+table.compare{border-collapse:collapse;width:100%;min-width:720px;font-size:1rem}
+.compare th,.compare td{text-align:left;padding:18px 20px;border-bottom:1px solid var(--rule);vertical-align:top}
+.compare thead th{font-size:1.05rem;font-variation-settings:"wdth" 108}
+.compare tbody th{font-weight:700;width:22%;color:var(--muted)}
+.compare .us{background:#F1F8FC}
+.compare thead .us{background:var(--navy);color:#fff;border-radius:8px 8px 0 0}
+.together{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.together h3{margin-bottom:8px}
+.together p{color:var(--muted);font-size:1rem}
+
+/* leaders */
+.leaders{background:var(--mist)}
+.leader-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:48px}
+.leader{display:grid;grid-template-columns:200px 1fr;gap:28px;align-items:start}
+.leader img{width:200px;height:250px;object-fit:cover;object-position:center top;border-radius:8px}
+.leader h3{font-size:1.5rem}
+.leader .role{color:var(--sky);font-weight:700;margin:4px 0 14px;font-size:.98rem}
+.leader p{font-size:1rem;color:var(--muted)}
+.leader a{font-weight:700;color:var(--navy)}
+
+/* steps */
+.start-steps{list-style:none;padding:0;margin:48px 0 0;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;counter-reset:s}
+.start-steps li{counter-increment:s;border-top:4px solid var(--navy);padding-top:18px}
+.start-steps li::before{content:counter(s);display:block;font-weight:800;font-size:2.2rem;font-variation-settings:"wdth" 120;color:var(--sky);line-height:1;margin-bottom:12px}
+.start-steps p{font-size:1rem;color:var(--muted)}
+.not{margin-top:72px;display:grid;grid-template-columns:1fr 2fr;gap:56px;border-top:1px solid var(--rule);padding-top:48px}
+.not ul{margin:0;padding-left:20px;color:var(--muted)}
+.not li{margin-bottom:8px}
+
+/* faq */
+.faq details{border-bottom:1px solid var(--rule);padding:20px 0}
+.faq summary{cursor:pointer;font-weight:700;font-size:1.1rem;list-style:none;display:flex;justify-content:space-between;gap:20px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--sky);font-size:1.5rem;line-height:1}
+.faq details[open] summary::after{content:"−"}
+.faq details p{margin:14px 0 0;color:var(--muted)}
+.faq-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:72px}
+
+/* cta */
+.cta{background:var(--navy);color:#fff;border-top:4px solid var(--line)}
+.cta-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:56px;align-items:center}
+.cta .lead{color:#C9D4E6}
+.contact-list{list-style:none;padding:0;margin:0}
+.contact-list li{padding:14px 0;border-bottom:1px solid #2C4470}
+.contact-list span{display:block;font-size:.85rem;color:#8FA2C2}
+.contact-list a{text-decoration:none;font-weight:700}
+.contact-list a:hover{color:var(--sky)}
+footer{background:#0A162D;color:#8FA2C2;font-size:.88rem;padding:28px 0}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer img{height:28px}
+
+@media (max-width:900px){
+  section{padding:72px 0}
+  .topbar nav{display:none}
+  .hero-grid,.problem-grid,.model-head,.ways-grid,.leader-grid,.cta-grid,.faq-grid,.not{grid-template-columns:1fr;gap:36px}
+  .hero-copy{padding-bottom:0}
+  .hero-photo img{max-height:380px}
+  .facts,.together,.infra-grid{grid-template-columns:1fr;gap:24px}
+  .start-steps{grid-template-columns:1fr 1fr}
+  .ladder{height:260px;gap:8px}
+  .step{padding:12px}
+  .example{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  body{font-size:17px}
+  .lockup img{height:34px}
+  .leader{grid-template-columns:1fr}
+  .leader img{width:100%;max-width:300px;height:375px}
+  .start-steps{grid-template-columns:1fr}
+  .step span{font-size:.72rem;line-height:1.3}
+  .step b{font-size:1.6rem}
+  .step{padding:10px 8px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="topbar">
+      <a class="lockup" href="#top" aria-label="FSN Prime, naar boven"><img src="assets/fsn-prime-lockup.png" alt="Financial Systems Network | PRIME"></a>
+      <nav aria-label="Hoofdmenu">
+        <a href="#model">Het model</a>
+        <a href="#samen">Samen sterker</a>
+        <a href="#leaders">Wie wij zijn</a>
+        <a href="#start">Starten</a>
+      </nav>
+    </div>
+    <div class="hero-grid" id="top">
+      <div class="hero-copy">
+        <p class="campaign">Own your book. Grow your share.</p>
+        <h1>Bouw je eigen recruitment&shy;business. Zonder alles zelf op te bouwen.</h1>
+        <p class="lead">FSN Prime is het platform voor ervaren recruiters die voor zichzelf willen werken. Jij bouwt je markt en je klanten. Wij leveren de infrastructuur eromheen.</p>
+        <div class="hero-ctas">
+          <a class="btn" href="#contact">Plan een kennismaking</a>
+          <a class="btn ghost" href="#model">Bekijk het model</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="assets/team.jpg" alt="Niels van Unen en Richard Berwald, oprichters van FSN Prime, op kantoor in Rotterdam" width="1050" height="1400">
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section aria-labelledby="h-probleem">
+  <div class="wrap problem-grid">
+    <div>
+      <h2 id="h-probleem">Recruiten kun je al. Het bedrijf eromheen kost je tijd.</h2>
+      <p class="lead" style="margin-top:22px">Wie voor zichzelf begint, krijgt er een tweede baan bij. Dat is tijd die niet naar kandidaten en klanten gaat.</p>
+      <p>Tegelijk wordt zelfstandig werken lastiger. Opdrachten als interim-recruiter worden schaarser en moeten steeds beter door de beugel kunnen. Veel goede recruiters staan voor een keuze tussen terug in loondienst of van opdracht naar opdracht.</p>
+      <p>Wij denken dat er een derde weg is: echt ondernemen, met je eigen klanten en meerdere opdrachtgevers, maar niet alleen.</p>
+      <div class="stat">
+        <strong>131.000</strong>
+        zzp'ers minder in Nederland tussen eind 2024 en medio 2026.<br>
+        <small>Bron: De Nederlandsche Bank, oktober 2026</small>
+      </div>
+    </div>
+    <div>
+      <h3 style="margin-bottom:14px">Wat er komt kijken bij voor jezelf beginnen</h3>
+      <ul class="burden">
+        <li><span>Merk en geloofwaardigheid</span><span>bij Prime geregeld</span></li>
+        <li><span>Contracten en voorwaarden</span><span>bij Prime geregeld</span></li>
+        <li><span>ATS en CRM</span><span>bij Prime geregeld</span></li>
+        <li><span>Sourcing- en AI-tooling</span><span>bij Prime geregeld</span></li>
+        <li><span>Facturatie en debiteuren</span><span>bij Prime geregeld</span></li>
+        <li><span>30 tot 60 dagen wachten op je geld</span><span>uitbetaling binnen 48 uur</span></li>
+        <li><span>Je eerste klanten vinden</span><span>start op lopende vacatures</span></li>
+        <li><span>Je markt, je klanten, je resultaat</span><span><strong style="color:var(--ink)">dat blijft van jou</strong></span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="ways" aria-labelledby="h-ways">
+  <div class="wrap">
+    <h2 id="h-ways">Twee manieren om met ons te werken</h2>
+    <p class="lead" style="margin-top:18px">Je kiest zelf wat bij je past. Veel recruiters beginnen als freelancer en stappen later over naar Prime.</p>
+    <div class="ways-grid">
+      <article class="way">
+        <h3>FSN Prime</h3>
+        <p class="for">Voor wie fulltime een eigen recruitmentbusiness wil bouwen.</p>
+        <ul>
+          <li>Je werkt vanuit je eigen onderneming, in je eigen markt</li>
+          <li>Je bouwt eigen klanten op: start op 50%, groeit tot maximaal 75% via productieve directe referrals</li>
+          <li>De eerste zes maanden kun je meedraaien op FSN-vacatures, op 50/50</li>
+          <li>RecruitCRM, Noota AI, onze AI-tooling en een FSN-mailadres</li>
+          <li>Een kort gesprek met Niels en Richard voor je start</li>
+        </ul>
+      </article>
+      <article class="way free">
+        <h3>Freelance 50/50</h3>
+        <p class="for">Voor wie naast een opdracht of eigen bureau extra wil plaatsen.</p>
+        <ul>
+          <li>Je pakt vacatures van FSN op die bij je passen</li>
+          <li>Jij zoekt en screent, wij doen het klantcontact en de facturatie</li>
+          <li>De fee delen we 50/50, uitbetaling binnen 48 uur na facturatie</li>
+          <li>Je werkt met je eigen tools, zonder abonnement of minimum</li>
+          <li>Na een paar plaatsingen kun je doorstromen naar Prime</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="model" aria-labelledby="h-model">
+  <div class="wrap">
+    <div class="model-head">
+      <h2 id="h-model">Hoe je aandeel groeit</h2>
+      <p class="lead">Op klanten die jij zelf binnenhaalt, start je op 50%. Breng je recruiters aan die zelf ook plaatsen, dan groeit jouw aandeel mee. Op FSN-klanten blijft het tijdens de startfase 50/50.</p>
+    </div>
+    <div class="ladder" role="img" aria-label="Jouw aandeel op eigen klanten: 50 procent zonder referrals, 60 procent bij één, 70 procent bij twee, 75 procent bij drie of meer productieve directe referrals">
+      <div class="step"><b>50%</b><span>Start op eigen klanten</span></div>
+      <div class="step"><b>60%</b><span>1 productieve referral</span></div>
+      <div class="step"><b>70%</b><span>2 productieve referrals</span></div>
+      <div class="step"><b>75%</b><span>3 of meer</span></div>
+    </div>
+    <div class="ladder-base">Een referral telt als productief na een eerste volledig betaalde plaatsing.</div>
+
+    <div class="facts">
+      <div>
+        <h3>Voorfinanciering door FSN</h3>
+        <p>Zodra de klantfactuur verstuurd is en wij jouw factuur hebben, staat je aandeel in principe binnen 48 uur op je rekening. Je wacht niet op de betaaltermijn van de klant.</p>
+      </div>
+      <div>
+        <h3>5% over je referrals</h3>
+        <p>Brengt iemand die jij aandroeg een volledig betaalde plaatsing binnen, dan krijg je daar 5% van de fee over. Uit ons deel, niet uit het hunne. Eén niveau, geen inschrijfgeld.</p>
+      </div>
+      <div>
+        <h3>Jouw klanten blijven van jou</h3>
+        <p>Klanten die je zelf aanbrengt, registreren we vooraf als jouw klanten. Zo is vanaf dag één duidelijk wat van wie is.</p>
+      </div>
+    </div>
+
+    <div class="example">
+      <h3 style="max-width:14ch">Rekenvoorbeeld bij een fee van €15.000</h3>
+      <div>
+        <table>
+          <tr><td>Op 50/50</td><td>€7.500</td></tr>
+          <tr><td>Op 60/40</td><td>€9.000</td></tr>
+          <tr><td>Op 70/30</td><td>€10.500</td></tr>
+          <tr><td>Op 75/25</td><td>€11.250</td></tr>
+        </table>
+        <p class="note">Bedragen exclusief btw. Dit zijn voorbeelden, geen garanties. Wat je verdient hangt af van je eigen plaatsingen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="infra" aria-labelledby="h-infra">
+  <div class="wrap">
+    <h2 id="h-infra">Wat wij regelen</h2>
+    <p class="lead" style="margin-top:18px">Alles wat een bureau nodig heeft, behalve jouw markt en jouw resultaat.</p>
+    <div class="infra-grid">
+      <div><h3>Merk en contracten</h3><p>Je werkt onder de naam en de voorwaarden van Financial Systems Network.</p></div>
+      <div><h3>RecruitCRM</h3><p>Eén plek voor kandidaten, klanten en vacatures.</p></div>
+      <div><h3>AI-tooling</h3><p>Noota voor gespreksverslagen en tooling voor sourcing en research.</p></div>
+      <div><h3>Facturatie</h3><p>Wij factureren de klant en volgen de betaling op.</p></div>
+      <div><h3>Lopende vacatures</h3><p>Finance, ERP/EPM, Cloud, IT-infra en Data/AI, waar beschikbaar.</p></div>
+      <div><h3>Sourcing vanuit Boedapest</h3><p>Extra capaciteit van ons team als dat voor een opdracht is afgesproken.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="samen" aria-labelledby="h-samen">
+  <div class="wrap">
+    <h2 id="h-samen">Samen sterker dan alleen</h2>
+    <p class="lead" style="margin-top:18px">Een zelfstandige recruiter concurreert met grote bureaus. Een netwerk van zelfstandigen kan dat anders doen.</p>
+    <div class="compare-wrap">
+      <table class="compare">
+        <thead>
+          <tr><th scope="col"></th><th scope="col">Alleen zelfstandig</th><th scope="col">In loondienst bij een bureau</th><th scope="col" class="us">FSN Prime</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Jouw deel van de fee</th><td>100%, maar alle kosten zelf</td><td>Salaris plus bonus</td><td class="us">50% tot 75%, zonder opstartkosten</td></tr>
+          <tr><th scope="row">Klanten</th><td>Helemaal zelf vinden</td><td>Van de werkgever</td><td class="us">Eigen klanten, plus lopende vacatures bij de start</td></tr>
+          <tr><th scope="row">Tooling en CRM</th><td>Zelf kopen en inrichten</td><td>Geregeld</td><td class="us">Geregeld</td></tr>
+          <tr><th scope="row">Uitbetaling</th><td>Na 30 tot 60 dagen</td><td>Maandelijks salaris</td><td class="us">Binnen 48 uur na facturatie</td></tr>
+          <tr><th scope="row">Vrijheid</th><td>Volledig</td><td>Beperkt</td><td class="us">Jij kiest markt, uren en werkplek</td></tr>
+          <tr><th scope="row">Netwerk</th><td>Je eigen netwerk</td><td>Je collega's</td><td class="us">Een groeiende groep zelfstandige recruiters</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="together">
+      <div><h3>Meer vacatures</h3><p>Wat de een niet kan invullen, pakt een ander op. Zo laat niemand een kans liggen.</p></div>
+      <div><h3>Gedeelde kennis</h3><p>Ervaren recruiters in verschillende niches leren van elkaar. Over markten, klanten en wat werkt.</p></div>
+      <div><h3>Meer gewicht</h3><p>Samen sta je sterker tegenover grote bureaus, en kun je klanten meer bieden dan in je eentje.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="leaders" id="leaders" aria-labelledby="h-leaders">
+  <div class="wrap">
+    <h2 id="h-leaders">Wie Prime trekken</h2>
+    <p class="lead" style="margin-top:18px">Wij weten hoe het is om alles alleen te doen. Daarom hebben we Prime opgezet.</p>
+    <div class="leader-grid">
+      <article class="leader">
+        <img src="assets/richard.jpg" alt="Richard Berwald" width="800" height="1000">
+        <div>
+          <h3>Richard Berwald</h3>
+          <p class="role">Co-founder &amp; Community Lead</p>
+          <p>Ruim tien jaar recruitment, waarvan zeven als zelfstandig recruiter voor onder meer Capgemini, Accenture, Booking.com en NS. Managing Director van Financial Systems Network.</p>
+          <p>Bij Prime selecteert en begeleidt hij nieuwe partners en bouwt hij aan het netwerk.</p>
+          <a href="https://www.linkedin.com/in/richardberwald/" target="_blank" rel="noopener">Richard op LinkedIn</a>
+        </div>
+      </article>
+      <article class="leader">
+        <img src="assets/niels.jpg" alt="Niels van Unen" width="800" height="1000">
+        <div>
+          <h3>Niels van Unen</h3>
+          <p class="role">Co-founder</p>
+          <p>Oprichter van Financial Systems Network en jarenlang zelfstandig recruiter. Kent de markt voor Finance- en IT-specialisten in de Benelux van binnenuit.</p>
+          <p>Bij Prime bewaakt hij de klantrelaties en het commerciële model.</p>
+          <a href="https://www.linkedin.com/company/fsn-prime/" target="_blank" rel="noopener">FSN Prime op LinkedIn</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="start" aria-labelledby="h-start">
+  <div class="wrap">
+    <h2 id="h-start">Zo start je</h2>
+    <ol class="start-steps">
+      <li><h3>Kennismaking</h3><p>Een kort gesprek over je ervaring, je markt en wat je zoekt.</p></li>
+      <li><h3>Deck en onepager</h3><p>Je krijgt alles op papier, zodat je rustig kunt kiezen.</p></li>
+      <li><h3>Gesprek met de oprichters</h3><p>Voor Prime spreek je Niels en Richard. Voor freelance 50/50 kun je meteen door.</p></li>
+      <li><h3>Overeenkomst en start</h3><p>Na akkoord zetten we binnen ongeveer een week je accounts klaar.</p></li>
+    </ol>
+
+    <div class="not">
+      <h3>Wat Prime niet is</h3>
+      <ul>
+        <li>Geen baan en geen vast salaris. Je verdient aan wat je zelf plaatst.</li>
+        <li>Geen garantie op vacatures of omzet. Lopende vacatures zijn een start, geen vaste werkvoorraad.</li>
+        <li>Geen franchise en geen inschrijfgeld.</li>
+        <li>Geen piramide. Een referral levert alleen iets op bij een volledig betaalde plaatsing, en er is maar één niveau.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="faq" aria-labelledby="h-faq" style="background:var(--mist)">
+  <div class="wrap faq-grid">
+    <h2 id="h-faq">Veelgestelde vragen</h2>
+    <div>
+      <details><summary>Moet ik een eigen bedrijf hebben?</summary><p>Ja. Je werkt vanuit je eigen onderneming, in Nederland of een ander EU-land, met een geldig btw-nummer. Heb je die nog niet, dan helpen we je praktisch op weg.</p></details>
+      <details><summary>Geldt de 75% ook op FSN-klanten?</summary><p>Nee. De groei naar 75% geldt op klanten die je zelf aanbrengt. Plaatsingen bij FSN-klanten zijn tijdens de startfase 50/50.</p></details>
+      <details><summary>Kan ik naast Prime ook andere opdrachten doen?</summary><p>Ja. Je bent zelfstandig ondernemer en mag voor meerdere opdrachtgevers werken.</p></details>
+      <details><summary>Werk ik op kantoor of remote?</summary><p>Je kiest zelf waar en wanneer je werkt. Ons kantoor in Rotterdam staat open als je er wil werken.</p></details>
+      <details><summary>Wanneer krijg ik betaald?</summary><p>In principe binnen 48 uur nadat de klantfactuur verstuurd is en wij jouw factuur hebben ontvangen. FSN financiert dat voor.</p></details>
+      <details><summary>Wat is het verschil tussen Prime en freelance 50/50?</summary><p>Bij freelance werk je alleen op onze vacatures, met je eigen tools. Bij Prime bouw je daarnaast je eigen klanten op en krijg je onze volledige infrastructuur.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact" aria-labelledby="h-contact">
+  <div class="wrap cta-grid">
+    <div>
+      <h2 id="h-contact">Herken je jezelf hierin?</h2>
+      <p class="lead" style="margin-top:20px">Stuur een bericht of bel ons. Dan plannen we een kort kennismakingsgesprek.</p>
+      <div class="hero-ctas"><a class="btn" href="mailto:rberwald@financialsystemsnetwork.nl?subject=Kennismaking%20FSN%20Prime">Mail Richard</a></div>
+    </div>
+    <ul class="contact-list">
+      <li><span>E-mail</span><a href="mailto:rberwald@financialsystemsnetwork.nl">rberwald@financialsystemsnetwork.nl</a></li>
+      <li><span>Telefoon</span><a href="tel:+31104993860">010 499 3860</a></li>
+      <li><span>LinkedIn</span><a href="https://www.linkedin.com/company/fsn-prime/" target="_blank" rel="noopener">FSN Prime</a></li>
+      <li><span>Kantoor</span>Millennium Tower, Weena 690, 3012 CN Rotterdam</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>FSN Prime is onderdeel van Financial Systems Network B.V. | KVK 98082140</span>
+    <a href="https://www.financialsystemsnetwork.nl" target="_blank" rel="noopener">financialsystemsnetwork.nl</a>
+  </div>
+</footer>
+
+</body>
+</html>
