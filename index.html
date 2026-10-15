@@ -116,15 +116,30 @@ table.compare{border-collapse:collapse;width:100%;min-width:720px;font-size:1rem
 .together h3{margin-bottom:8px}
 .together p{color:var(--muted);font-size:1rem}
 
-/* leaders */
+/* story */
+.story{padding-bottom:0}
+.story-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
+.story-grid img{width:100%;height:auto;border-radius:8px}
+.story-grid figcaption{font-size:.88rem;color:var(--muted);margin-top:10px}
+.story-copy p{font-size:1.12rem}
+.sign{font-weight:700;margin-top:6px}
+.sign span{display:block;font-weight:400;color:var(--muted);font-size:.95rem}
+
+/* team */
 .leaders{background:var(--mist)}
-.leader-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:48px}
-.leader{display:grid;grid-template-columns:200px 1fr;gap:28px;align-items:start}
-.leader img{width:200px;height:250px;object-fit:cover;object-position:center top;border-radius:8px}
-.leader h3{font-size:1.5rem}
-.leader .role{color:var(--sky);font-weight:700;margin:4px 0 14px;font-size:.98rem}
-.leader p{font-size:1rem;color:var(--muted)}
-.leader a{font-weight:700;color:var(--navy)}
+.team-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;margin-top:48px}
+.member img{width:100%;aspect-ratio:4/5;height:auto;object-fit:cover;object-position:center top;border-radius:8px;margin-bottom:18px}
+.member h3{font-size:1.3rem}
+.member .role{color:var(--sky);font-weight:700;margin:4px 0 10px;font-size:.92rem}
+.member p{font-size:.98rem;color:var(--muted)}
+.member a{font-weight:700;color:var(--navy);font-size:.95rem}
+.member .quote{color:var(--ink);font-style:italic;border-left:3px solid var(--line);padding-left:12px}
+.team-sub{margin:64px 0 0;padding-top:18px;border-top:1px solid var(--rule);font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+
+/* samen photo */
+.samen-photo{margin-top:56px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.samen-photo img{width:100%;height:auto;border-radius:8px}
+.samen-photo .together{margin-top:0;grid-template-columns:1fr;gap:24px}
 
 /* steps */
 .start-steps{list-style:none;padding:0;margin:48px 0 0;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;counter-reset:s}
@@ -160,11 +175,12 @@ footer img{height:28px}
 @media (max-width:900px){
   section{padding:72px 0}
   .topbar nav{display:none}
-  .hero-grid,.problem-grid,.model-head,.ways-grid,.leader-grid,.cta-grid,.faq-grid,.not{grid-template-columns:1fr;gap:36px}
+  .hero-grid,.problem-grid,.model-head,.ways-grid,.story-grid,.samen-photo,.cta-grid,.faq-grid,.not{grid-template-columns:1fr;gap:36px}
   .hero-copy{padding-bottom:0}
   .hero-photo img{max-height:380px}
   .facts,.together,.infra-grid{grid-template-columns:1fr;gap:24px}
   .start-steps{grid-template-columns:1fr 1fr}
+  .team-grid{grid-template-columns:1fr 1fr;gap:28px 20px}
   .ladder{height:260px;gap:8px}
   .step{padding:12px}
   .example{grid-template-columns:1fr}
@@ -172,8 +188,6 @@ footer img{height:28px}
 @media (max-width:560px){
   body{font-size:17px}
   .lockup img{height:34px}
-  .leader{grid-template-columns:1fr}
-  .leader img{width:100%;max-width:300px;height:375px}
   .start-steps{grid-template-columns:1fr}
   .step span{font-size:.72rem;line-height:1.3}
   .step b{font-size:1.6rem}
@@ -190,7 +204,7 @@ footer img{height:28px}
       <nav aria-label="Hoofdmenu">
         <a href="#model">Het model</a>
         <a href="#samen">Samen sterker</a>
-        <a href="#leaders">Wie wij zijn</a>
+        <a href="#leaders">Het team</a>
         <a href="#start">Starten</a>
       </nav>
     </div>
@@ -198,9 +212,9 @@ footer img{height:28px}
       <div class="hero-copy">
         <p class="campaign">Own your book. Grow your share.</p>
         <h1>Bouw je eigen recruitment&shy;business. Zonder alles zelf op te bouwen.</h1>
-        <p class="lead">FSN Prime is het platform voor ervaren recruiters die voor zichzelf willen werken. Jij bouwt je markt en je klanten. Wij leveren de infrastructuur eromheen.</p>
+        <p class="lead">FSN Prime is een groep zelfstandige recruiters die het samen doen. Jij bouwt je eigen klanten en je eigen naam. Wij regelen de tooling, de contracten en de facturatie, en we bellen je gewoon even als je ergens mee zit.</p>
         <div class="hero-ctas">
-          <a class="btn" href="#contact">Plan een kennismaking</a>
+          <a class="btn" href="#contact">Kom een koffie drinken</a>
           <a class="btn ghost" href="#model">Bekijk het model</a>
         </div>
       </div>
@@ -212,6 +226,22 @@ footer img{height:28px}
 </header>
 
 <main>
+
+<section class="story" aria-labelledby="h-story">
+  <div class="wrap story-grid">
+    <figure style="margin:0">
+      <img src="assets/team-office.jpg" alt="Richard, Barnie en Joris samen op kantoor in Rotterdam" width="1600" height="1200">
+      <figcaption>Richard, Barnie en Joris op kantoor in de Millennium Tower, Rotterdam.</figcaption>
+    </figure>
+    <div class="story-copy">
+      <p class="prime-label">Waarom we Prime begonnen</p>
+      <h2 id="h-story">We hebben het zelf ook alleen gedaan.</h2>
+      <p style="margin-top:22px">Jarenlang werkten we als zelfstandig recruiter. Het recruiten zelf ging prima. Wat ons tijd kostte, was al het andere: contracten, tools, facturen, weken wachten op je geld. En het feit dat je niemand had om even mee te sparren.</p>
+      <p>Bij FSN hebben we dat inmiddels goed staan. Prime is onze manier om dat te delen met recruiters die hun eigen ding willen doen, maar niet in hun eentje.</p>
+      <p class="sign">Richard en Niels<span>Oprichters FSN Prime</span></p>
+    </div>
+  </div>
+</section>
 
 <section aria-labelledby="h-probleem">
   <div class="wrap problem-grid">
@@ -236,6 +266,7 @@ footer img{height:28px}
         <li><span>Facturatie en debiteuren</span><span>bij Prime geregeld</span></li>
         <li><span>30 tot 60 dagen wachten op je geld</span><span>uitbetaling binnen 48 uur</span></li>
         <li><span>Je eerste klanten vinden</span><span>start op lopende vacatures</span></li>
+        <li><span>Iemand om mee te sparren</span><span>een team dat je kent</span></li>
         <li><span>Je markt, je klanten, je resultaat</span><span><strong style="color:var(--ink)">dat blijft van jou</strong></span></li>
       </ul>
     </div>
@@ -327,7 +358,7 @@ footer img{height:28px}
       <div><h3>AI-tooling</h3><p>Noota voor gespreksverslagen en tooling voor sourcing en research.</p></div>
       <div><h3>Facturatie</h3><p>Wij factureren de klant en volgen de betaling op.</p></div>
       <div><h3>Lopende vacatures</h3><p>Finance, ERP/EPM, Cloud, IT-infra en Data/AI, waar beschikbaar.</p></div>
-      <div><h3>Sourcing vanuit Boedapest</h3><p>Extra capaciteit van ons team als dat voor een opdracht is afgesproken.</p></div>
+      <div><h3>Sourcing met Barnie</h3><p>Extra zoekkracht van ons team in Boedapest, als dat voor een opdracht is afgesproken.</p></div>
     </div>
   </div>
 </section>
@@ -351,38 +382,48 @@ footer img{height:28px}
         </tbody>
       </table>
     </div>
+    <div class="samen-photo">
+    <img src="assets/samen-werken.jpg" alt="Joris en Barnie aan het werk op kantoor" width="1600" height="1200">
     <div class="together">
       <div><h3>Meer vacatures</h3><p>Wat de een niet kan invullen, pakt een ander op. Zo laat niemand een kans liggen.</p></div>
       <div><h3>Gedeelde kennis</h3><p>Ervaren recruiters in verschillende niches leren van elkaar. Over markten, klanten en wat werkt.</p></div>
       <div><h3>Meer gewicht</h3><p>Samen sta je sterker tegenover grote bureaus, en kun je klanten meer bieden dan in je eentje.</p></div>
+      <div><h3>Niet alleen</h3><p>Een lastige klant, een twijfelgeval, een deal die bijna rond is. Er is altijd iemand die meekijkt.</p></div>
+    </div>
     </div>
   </div>
 </section>
 
 <section class="leaders" id="leaders" aria-labelledby="h-leaders">
   <div class="wrap">
-    <h2 id="h-leaders">Wie Prime trekken</h2>
-    <p class="lead" style="margin-top:18px">Wij weten hoe het is om alles alleen te doen. Daarom hebben we Prime opgezet.</p>
-    <div class="leader-grid">
-      <article class="leader">
+    <h2 id="h-leaders">De mensen achter Prime</h2>
+    <p class="lead" style="margin-top:18px">Een klein team, geen hoofdkantoor op afstand. Je weet altijd wie je kunt bellen.</p>
+    <div class="team-grid">
+      <article class="member">
         <img src="assets/richard.jpg" alt="Richard Berwald" width="800" height="1000">
-        <div>
-          <h3>Richard Berwald</h3>
-          <p class="role">Co-founder &amp; Community Lead</p>
-          <p>Ruim tien jaar recruitment, waarvan zeven als zelfstandig recruiter voor onder meer Capgemini, Accenture, Booking.com en NS. Managing Director van Financial Systems Network.</p>
-          <p>Bij Prime selecteert en begeleidt hij nieuwe partners en bouwt hij aan het netwerk.</p>
-          <a href="https://www.linkedin.com/in/richardberwald/" target="_blank" rel="noopener">Richard op LinkedIn</a>
-        </div>
+        <h3>Richard Berwald</h3>
+        <p class="role">Co-founder &amp; Community Lead</p>
+        <p>Ruim tien jaar recruitment, waarvan zeven als zelfstandige. Hij voert de eerste gesprekken en begeleidt je in je eerste maanden.</p>
+        <a href="https://www.linkedin.com/in/richardberwald/" target="_blank" rel="noopener">LinkedIn</a>
       </article>
-      <article class="leader">
+      <article class="member">
         <img src="assets/niels.jpg" alt="Niels van Unen" width="800" height="1000">
-        <div>
-          <h3>Niels van Unen</h3>
-          <p class="role">Co-founder</p>
-          <p>Oprichter van Financial Systems Network en jarenlang zelfstandig recruiter. Kent de markt voor Finance- en IT-specialisten in de Benelux van binnenuit.</p>
-          <p>Bij Prime bewaakt hij de klantrelaties en het commerciële model.</p>
-          <a href="https://www.linkedin.com/company/fsn-prime/" target="_blank" rel="noopener">FSN Prime op LinkedIn</a>
-        </div>
+        <h3>Niels van Unen</h3>
+        <p class="role">Co-founder</p>
+        <p>Oprichter van FSN en jarenlang zelfstandig recruiter. Kent de klanten, bewaakt het model en denkt mee over je commerciële aanpak.</p>
+        <a href="https://www.linkedin.com/company/fsn-prime/" target="_blank" rel="noopener">LinkedIn</a>
+      </article>
+      <article class="member">
+        <img src="assets/joris.jpg" alt="Joris" width="800" height="1000">
+        <h3>Joris</h3>
+        <p class="role">Community Builder</p>
+        <p>Houdt de zakelijke kant scherp: kosten, contracten en afspraken. Zodat jij je kunt richten op recruiten.</p>
+      </article>
+      <article class="member">
+        <img src="assets/barnie.jpg" alt="Barnie" width="800" height="1000">
+        <h3>Barnie</h3>
+        <p class="role">Community Builder</p>
+        <p>Zoekt kandidaten, legt het eerste contact via LinkedIn en zet gesprekken in de agenda. Werkt vanuit Boedapest.</p>
       </article>
     </div>
   </div>
@@ -392,10 +433,10 @@ footer img{height:28px}
   <div class="wrap">
     <h2 id="h-start">Zo start je</h2>
     <ol class="start-steps">
-      <li><h3>Kennismaking</h3><p>Een kort gesprek over je ervaring, je markt en wat je zoekt.</p></li>
+      <li><h3>Kennismaking</h3><p>Een kort gesprek met Richard over je ervaring, je markt en wat je zoekt. Bellen of koffie in Rotterdam.</p></li>
       <li><h3>Deck en onepager</h3><p>Je krijgt alles op papier, zodat je rustig kunt kiezen.</p></li>
       <li><h3>Gesprek met de oprichters</h3><p>Voor Prime spreek je Niels en Richard. Voor freelance 50/50 kun je meteen door.</p></li>
-      <li><h3>Overeenkomst en start</h3><p>Na akkoord zetten we binnen ongeveer een week je accounts klaar.</p></li>
+      <li><h3>Overeenkomst en start</h3><p>Na akkoord zetten we binnen ongeveer een week je accounts klaar en stellen we je voor aan het team.</p></li>
     </ol>
 
     <div class="not">
@@ -417,6 +458,7 @@ footer img{height:28px}
       <details><summary>Moet ik een eigen bedrijf hebben?</summary><p>Ja. Je werkt vanuit je eigen onderneming, in Nederland of een ander EU-land, met een geldig btw-nummer. Heb je die nog niet, dan helpen we je praktisch op weg.</p></details>
       <details><summary>Geldt de 75% ook op FSN-klanten?</summary><p>Nee. De groei naar 75% geldt op klanten die je zelf aanbrengt. Plaatsingen bij FSN-klanten zijn tijdens de startfase 50/50.</p></details>
       <details><summary>Kan ik naast Prime ook andere opdrachten doen?</summary><p>Ja. Je bent zelfstandig ondernemer en mag voor meerdere opdrachtgevers werken.</p></details>
+      <details><summary>Met wie heb ik contact?</summary><p>Met Richard voor de begeleiding, met Niels over klanten, met Barnie als je sourcing nodig hebt en met Joris over contracten en afspraken. Een klein team, dus je hoeft nooit lang te zoeken.</p></details>
       <details><summary>Werk ik op kantoor of remote?</summary><p>Je kiest zelf waar en wanneer je werkt. Ons kantoor in Rotterdam staat open als je er wil werken.</p></details>
       <details><summary>Wanneer krijg ik betaald?</summary><p>In principe binnen 48 uur nadat de klantfactuur verstuurd is en wij jouw factuur hebben ontvangen. FSN financiert dat voor.</p></details>
       <details><summary>Wat is het verschil tussen Prime en freelance 50/50?</summary><p>Bij freelance werk je alleen op onze vacatures, met je eigen tools. Bij Prime bouw je daarnaast je eigen klanten op en krijg je onze volledige infrastructuur.</p></details>
@@ -427,8 +469,8 @@ footer img{height:28px}
 <section class="cta" id="contact" aria-labelledby="h-contact">
   <div class="wrap cta-grid">
     <div>
-      <h2 id="h-contact">Herken je jezelf hierin?</h2>
-      <p class="lead" style="margin-top:20px">Stuur een bericht of bel ons. Dan plannen we een kort kennismakingsgesprek.</p>
+      <h2 id="h-contact">Zin om kennis te maken?</h2>
+      <p class="lead" style="margin-top:20px">Stuur Richard een bericht of bel even. Geen sollicitatieprocedure, gewoon een gesprek om te kijken of het klikt.</p>
       <div class="hero-ctas"><a class="btn" href="mailto:rberwald@financialsystemsnetwork.nl?subject=Kennismaking%20FSN%20Prime">Mail Richard</a></div>
     </div>
     <ul class="contact-list">
