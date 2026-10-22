@@ -5,6 +5,7 @@
 //   FREELANCE_JOB_SLUG   = optioneel, vacature voor freelance 50/50
 const API = 'https://api.recruitcrm.io/v1';
 const PRIME_JOB = process.env.PRIME_JOB_SLUG || '17879152355040136156Adz';
+const APPLIED_STAGE = 10; // "Applied" in de Master Hiring Pipeline
 const FREELANCE_JOB = process.env.FREELANCE_JOB_SLUG || PRIME_JOB; // standaard dezelfde partnervacature
 
 module.exports = async (req, res) => {
@@ -56,6 +57,13 @@ module.exports = async (req, res) => {
     const aBody = (await a.text()).slice(0, 300);
     if (!a.ok) console.error('assign failed', a.status, aBody);
     else console.log('assigned', slug, 'to', job, route);
+    // Zet de kandidaat op "Applied" (stage 10) zodat zichtbaar is dat hij zich zelf heeft aangemeld.
+    const st = await fetch(`${API}/candidates/${slug}/hiring-stages/${encodeURIComponent(job)}`, {
+      method: 'POST',
+      headers: { ...auth, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ status_id: APPLIED_STAGE, remark: route === 'freelance' ? 'Aanmelding via fsnprime.nl (Freelance 50/50)' : 'Aanmelding via fsnprime.nl (FSN Prime)' }),
+    });
+    if (!st.ok) console.error('stage update failed', st.status, (await st.text()).slice(0, 300));
     return res.status(200).json({ ok: true });
   } catch (e) {
     console.error(e);
