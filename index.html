@@ -47,6 +47,13 @@ section{padding:104px 0}
 .btn:hover{background:#6CC2E8}
 .btn.ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px #3A5584}
 .btn.ghost:hover{box-shadow:inset 0 0 0 2px var(--sky)}
+.btn.violet{background:var(--violet);color:#fff}
+.btn.violet:hover{background:#9C8EE0}
+.btn.line{background:transparent;color:var(--navy);box-shadow:inset 0 0 0 2px var(--rule)}
+.btn.line:hover{box-shadow:inset 0 0 0 2px var(--navy)}
+.way-ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.way-ctas .btn{padding:13px 20px;font-size:.95rem}
+.nav-cta{background:var(--sky);color:var(--navy)!important;padding:9px 16px;border-radius:6px;font-weight:700}
 .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:end;padding:56px 0 0}
 .hero-copy{padding-bottom:88px}
 .hero-copy .lead{color:#C9D4E6;margin-top:24px;font-size:1.25rem}
@@ -175,7 +182,7 @@ table.compare{border-collapse:collapse;width:100%;min-width:720px;font-size:1rem
 .contact-list{list-style:none;padding:0;margin:0}
 .contact-list li{padding:14px 0;border-bottom:1px solid #2C4470}
 .contact-list span{display:block;font-size:.85rem;color:#8FA2C2}
-.contact-list a{text-decoration:none;font-weight:700}
+.contact-list a{text-decoration:none;font-weight:700;overflow-wrap:anywhere}
 .contact-list a:hover{color:var(--sky)}
 footer{background:#0A162D;color:#8FA2C2;font-size:.88rem;padding:28px 0}
 footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
@@ -217,6 +224,7 @@ footer img{height:28px}
         <a href="#samen">Samen sterker</a>
         <a href="#leaders">Het team</a>
         <a href="#start">Starten</a>
+        <a class="nav-cta" href="https://scheduler.recruitcrm.io/scheduler?config_id=fa96d1b8-2f5f-4f34-b53d-71d1555472fd" target="_blank" rel="noopener">Plan een gesprek</a>
       </nav>
     </div>
     <div class="hero-grid" id="top">
@@ -225,8 +233,8 @@ footer img{height:28px}
         <h1>Bouw je eigen recruitment&shy;business. Zonder alles zelf op te bouwen.</h1>
         <p class="lead">FSN Prime is een groep zelfstandige recruiters die het samen doen. Jij bouwt je eigen klanten en je eigen naam. Wij regelen de tooling, de contracten en de facturatie, en we bellen je gewoon even als je ergens mee zit.</p>
         <div class="hero-ctas">
-          <a class="btn" href="#contact">Kom een koffie drinken</a>
-          <a class="btn ghost" href="#model">Bekijk het model</a>
+          <a class="btn" href="https://scheduler.recruitcrm.io/scheduler?config_id=fa96d1b8-2f5f-4f34-b53d-71d1555472fd" target="_blank" rel="noopener">Plan een gesprek met Richard</a>
+          <a class="btn ghost" href="#ways">Prime of freelance?</a>
         </div>
       </div>
       <div class="hero-photo">
@@ -284,7 +292,7 @@ footer img{height:28px}
   </div>
 </section>
 
-<section class="ways" aria-labelledby="h-ways">
+<section class="ways" id="ways" aria-labelledby="h-ways">
   <div class="wrap">
     <h2 id="h-ways">Twee manieren om met ons te werken</h2>
     <p class="lead" style="margin-top:18px">Wil je je eigen recruitmentbusiness bouwen? Of gewoon extra verdienen naast wat je nu doet? Kies wat bij je past.</p>
@@ -298,6 +306,7 @@ footer img{height:28px}
           <div><h4>Wij doen</h4><ul><li>CRM, AI-tooling en mailadres</li><li>Contracten en facturatie</li><li>Uitbetaling binnen 48 uur</li></ul></div>
         </div>
         <p class="fit"><strong>Past bij jou als</strong> je fulltime ondernemer wil zijn, met je eigen klanten, maar zonder alles zelf op te tuigen.</p>
+        <div class="way-ctas"><a class="btn" href="https://recruitcrm.io/apply/17879152355040136156Adz" target="_blank" rel="noopener">Solliciteer voor Prime</a><a class="btn line" href="https://scheduler.recruitcrm.io/scheduler?config_id=fa96d1b8-2f5f-4f34-b53d-71d1555472fd" target="_blank" rel="noopener">Eerst even bellen</a></div>
       </article>
       <article class="way free">
         <p class="way-tag">Freelance</p>
@@ -308,6 +317,7 @@ footer img{height:28px}
           <div><h4>Wij doen</h4><ul><li>De klant en de vacature</li><li>Voorstellen, onderhandelen, contract</li><li>Facturatie en uitbetaling</li></ul></div>
         </div>
         <p class="fit"><strong>Past bij jou als</strong> je al een opdracht of eigen bureau hebt en goede kandidaten wil laten renderen. Geen sales, geen abonnement, geen minimum.</p>
+        <div class="way-ctas"><a class="btn violet" href="mailto:rberwald@financialsystemsnetwork.nl?subject=Aanmelding%20freelance%2050%2F50&body=Hoi%20Richard%2C%0A%0AIk%20wil%20graag%20als%20freelancer%20op%2050%2F50-basis%20met%20FSN%20samenwerken.%0A%0ANaam%3A%0ALinkedIn%3A%0ASpecialisme%20%2F%20markt%3A%0AUren%20per%20week%3A%0ATelefoon%3A%0A%0AGroet%2C">Meld je aan als freelancer</a><a class="btn line" href="https://scheduler.recruitcrm.io/scheduler?config_id=fa96d1b8-2f5f-4f34-b53d-71d1555472fd" target="_blank" rel="noopener">Eerst even bellen</a></div>
       </article>
     </div>
     <p class="ways-note">Tot 75% geldt op klanten die je zelf aanbrengt en groeit mee met de recruiters die je aandraagt. Hoe dat werkt, lees je hieronder. Freelancers kunnen na een paar plaatsingen doorstromen naar Prime.</p>
@@ -443,9 +453,9 @@ footer img{height:28px}
   <div class="wrap">
     <h2 id="h-start">Zo start je</h2>
     <ol class="start-steps">
-      <li><h3>Kennismaking</h3><p>Een kort gesprek met Richard over je ervaring, je markt en wat je zoekt. Bellen of koffie in Rotterdam.</p></li>
+      <li><h3>Kennismaking</h3><p>Je plant zelf <a href="https://scheduler.recruitcrm.io/scheduler?config_id=fa96d1b8-2f5f-4f34-b53d-71d1555472fd" target="_blank" rel="noopener">een gesprek met Richard</a> in. Over je ervaring, je markt en of Prime of freelance 50/50 bij je past.</p></li>
       <li><h3>Deck en onepager</h3><p>Je krijgt alles op papier, zodat je rustig kunt kiezen.</p></li>
-      <li><h3>Gesprek met de oprichters</h3><p>Voor Prime spreek je Niels en Richard. Als freelancer kun je meteen door.</p></li>
+      <li><h3>Tweede gesprek</h3><p>Klikt het, dan plannen we een tweede gesprek met Niels en Richard. Daarin maken we het concreet.</p></li>
       <li><h3>Overeenkomst en start</h3><p>Na akkoord zetten we binnen ongeveer een week je accounts klaar en stellen we je voor aan het team.</p></li>
     </ol>
 
@@ -480,8 +490,8 @@ footer img{height:28px}
   <div class="wrap cta-grid">
     <div>
       <h2 id="h-contact">Zin om kennis te maken?</h2>
-      <p class="lead" style="margin-top:20px">Stuur Richard een bericht of bel even. Geen sollicitatieprocedure, gewoon een gesprek om te kijken of het klikt.</p>
-      <div class="hero-ctas"><a class="btn" href="mailto:rberwald@financialsystemsnetwork.nl?subject=Kennismaking%20FSN%20Prime">Mail Richard</a></div>
+      <p class="lead" style="margin-top:20px">Plan zelf een gesprek met Richard voor meer informatie, of om Prime of freelance 50/50 concreet te bespreken. Weet je het al? Solliciteer dan direct of meld je aan als freelancer.</p>
+      <div class="hero-ctas"><a class="btn" href="https://scheduler.recruitcrm.io/scheduler?config_id=fa96d1b8-2f5f-4f34-b53d-71d1555472fd" target="_blank" rel="noopener">Plan een gesprek met Richard</a><a class="btn ghost" href="https://recruitcrm.io/apply/17879152355040136156Adz" target="_blank" rel="noopener">Solliciteer voor Prime</a><a class="btn ghost" href="mailto:rberwald@financialsystemsnetwork.nl?subject=Aanmelding%20freelance%2050%2F50&body=Hoi%20Richard%2C%0A%0AIk%20wil%20graag%20als%20freelancer%20op%2050%2F50-basis%20met%20FSN%20samenwerken.%0A%0ANaam%3A%0ALinkedIn%3A%0ASpecialisme%20%2F%20markt%3A%0AUren%20per%20week%3A%0ATelefoon%3A%0A%0AGroet%2C">Aanmelden als freelancer</a></div>
     </div>
     <ul class="contact-list">
       <li><span>E-mail</span><a href="mailto:rberwald@financialsystemsnetwork.nl">rberwald@financialsystemsnetwork.nl</a></li>
