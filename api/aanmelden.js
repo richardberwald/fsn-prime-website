@@ -5,6 +5,7 @@
 //   FREELANCE_JOB_SLUG   = optioneel, vacature voor freelance 50/50
 const API = 'https://api.recruitcrm.io/v1';
 const PRIME_JOB = process.env.PRIME_JOB_SLUG || '17879152355040136156Adz';
+const NOTE_TYPE = 216402; // "Candidate Note"
 const APPLIED_STAGE = 10; // "Applied" in de Master Hiring Pipeline
 const FREELANCE_JOB = process.env.FREELANCE_JOB_SLUG || PRIME_JOB; // standaard dezelfde partnervacature
 
@@ -29,12 +30,9 @@ module.exports = async (req, res) => {
     fd.append('last_name', last);
     fd.append('email', email);
     if (b.phone) fd.append('contact_number', String(b.phone).trim());
-    if (b.linkedin) fd.append('profile_linkedin', String(b.linkedin).trim());
+    if (b.linkedin) fd.append('linkedin', String(b.linkedin).trim());
     if (b.city) fd.append('city', String(b.city).trim());
     fd.append('source', route === 'freelance' ? 'fsnprime.nl | Freelance 50/50' : 'fsnprime.nl | FSN Prime');
-    const extra = [b.focus && `Markt/specialisme: ${b.focus}`, b.hours && `Uren per week: ${b.hours}`, b.message && `Toelichting: ${b.message}`]
-      .filter(Boolean).join('\n');
-    if (extra) fd.append('summary', extra);
     if (b.cv && b.cv.data && b.cv.name) {
       const buf = Buffer.from(b.cv.data, 'base64');
       if (buf.length > 4 * 1024 * 1024) return res.status(400).json({ ok: false, error: 'cv_too_large' });
@@ -64,6 +62,20 @@ module.exports = async (req, res) => {
       body: JSON.stringify({ status_id: APPLIED_STAGE, remark: route === 'freelance' ? 'Aanmelding via fsnprime.nl (Freelance 50/50)' : 'Aanmelding via fsnprime.nl (FSN Prime)' }),
     });
     if (!st.ok) console.error('stage update failed', st.status, (await st.text()).slice(0, 300));
+    // Notitie met de extra antwoorden uit het formulier.
+    const lines = [
+      `Aanmelding via fsnprime.nl: ${route === 'freelance' ? 'Freelance 50/50' : 'FSN Prime'}`,
+      b.focus && `Markt of specialisme: ${String(b.focus).trim()}`,
+      b.hours && `Uren per week: ${String(b.hours).trim()}`,
+      b.linkedin && `LinkedIn: ${String(b.linkedin).trim()}`,
+      b.message && `Toelichting: ${String(b.message).trim()}`,
+    ].filter(Boolean);
+    const nt = await fetch(`${API}/notes`, {
+      method: 'POST',
+      headers: { ...auth, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ note_type_id: NOTE_TYPE, description: lines.join('<br>'), related_to: slug, related_to_type: 'candidate' }),
+    });
+    if (!nt.ok) console.error('note failed', nt.status, (await nt.text()).slice(0, 300));
     return res.status(200).json({ ok: true });
   } catch (e) {
     console.error(e);
