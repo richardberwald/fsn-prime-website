@@ -20,7 +20,8 @@
   <div class="wrap">
     <div class="topbar">
       <a class="lockup" href="#top" aria-label="FSN Prime, naar boven"><img src="/assets/fsn-prime-lockup.png" alt="Financial Systems Network | PRIME"></a>
-      <nav aria-label="Hoofdmenu">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="hoofdmenu" aria-label="Menu openen"><span></span><span></span><span></span></button>
+      <nav id="hoofdmenu" aria-label="Hoofdmenu">
         <a href="/#model">Het model</a>
         <a href="/#leaders">Het team</a>
         <a href="/prime-partner">Prime-partner</a>
@@ -318,5 +319,6 @@
 </footer>
 
 <script>(function(){var n=document.querySelector('.site-nav');function f(){n.classList.toggle('scrolled',window.scrollY>8);}window.addEventListener('scroll',f,{passive:true});f();})();</script>
+<script>(function(){var t=document.querySelector('.menu-toggle'),n=document.querySelector('.site-nav');if(!t)return;function set(o){n.classList.toggle('open',o);t.setAttribute('aria-expanded',o);t.setAttribute('aria-label',o?'Menu sluiten':'Menu openen');}t.addEventListener('click',function(){set(!n.classList.contains('open'));});n.querySelectorAll('nav a').forEach(function(a){a.addEventListener('click',function(){set(false);});});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();</script>
 </body>
 </html>
