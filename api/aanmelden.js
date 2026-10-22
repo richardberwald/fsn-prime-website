@@ -5,7 +5,7 @@
 //   FREELANCE_JOB_SLUG   = optioneel, vacature voor freelance 50/50
 const API = 'https://api.recruitcrm.io/v1';
 const PRIME_JOB = process.env.PRIME_JOB_SLUG || '17879152355040136156Adz';
-const FREELANCE_JOB = process.env.FREELANCE_JOB_SLUG || '';
+const FREELANCE_JOB = process.env.FREELANCE_JOB_SLUG || PRIME_JOB; // standaard dezelfde partnervacature
 
 module.exports = async (req, res) => {
   if (req.method !== 'POST') return res.status(405).json({ ok: false });
@@ -41,15 +41,21 @@ module.exports = async (req, res) => {
     }
     const r = await fetch(`${API}/candidates`, { method: 'POST', headers: auth, body: fd });
     const cand = await r.json().catch(() => ({}));
-    if (!r.ok || !cand.slug) {
+    let slug = cand && cand.slug;
+    if (!r.ok || !slug) {
+      // Bestaat de kandidaat al (zelfde e-mail)? Zoek hem op en koppel alsnog.
       console.error('create candidate failed', r.status, JSON.stringify(cand).slice(0, 500));
-      return res.status(502).json({ ok: false, error: 'crm' });
+      const sr = await fetch(`${API}/candidates/search?email=${encodeURIComponent(email)}`, { headers: auth });
+      const found = await sr.json().catch(() => null);
+      const list = Array.isArray(found) ? found : (found && (found.data || found.candidates)) || [];
+      slug = list[0] && list[0].slug;
+      if (!slug) return res.status(502).json({ ok: false, error: 'crm' });
     }
     const job = route === 'freelance' ? FREELANCE_JOB : PRIME_JOB;
-    if (job) {
-      const a = await fetch(`${API}/candidates/${cand.slug}/assign?job_slug=${encodeURIComponent(job)}`, { method: 'POST', headers: auth });
-      if (!a.ok) console.error('assign failed', a.status, (await a.text()).slice(0, 300));
-    }
+    const a = await fetch(`${API}/candidates/${slug}/assign?job_slug=${encodeURIComponent(job)}`, { method: 'POST', headers: auth });
+    const aBody = (await a.text()).slice(0, 300);
+    if (!a.ok) console.error('assign failed', a.status, aBody);
+    else console.log('assigned', slug, 'to', job, route);
     return res.status(200).json({ ok: true });
   } catch (e) {
     console.error(e);
