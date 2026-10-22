@@ -236,3 +236,24 @@ footer img{height:28px}
 .page-hero h1{font-size:clamp(2rem,4.4vw,3.4rem);max-width:22ch}
 .page-hero .lead{color:#C9D4E6;margin-top:18px}
 .topbar nav a.active{color:#fff;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:6px}
+
+/* zwevend menu */
+.site-nav{position:sticky;top:0;z-index:50;background:var(--navy);transition:box-shadow .2s}
+.site-nav.scrolled{box-shadow:0 2px 16px rgba(5,12,28,.35);border-bottom:1px solid #22365E}
+.site-nav .topbar{padding:14px 0}
+.site-nav .lockup img{height:38px}
+section[id],[id="top"]{scroll-margin-top:96px}
+@media (max-width:900px){section[id]{scroll-margin-top:150px}}
+@media (max-width:900px){
+  .site-nav .topbar{padding:10px 0;gap:8px}
+  .site-nav .lockup{padding:6px 10px}
+  .site-nav .lockup img{height:28px}
+  .site-nav nav{flex-wrap:nowrap;overflow-x:auto;width:100%;gap:16px;white-space:nowrap;scrollbar-width:none;padding-bottom:2px}
+  .site-nav nav::-webkit-scrollbar{display:none}
+  section[id]{scroll-margin-top:110px}
+}
+@media (max-width:900px){
+  .site-nav .topbar{position:relative}
+  .site-nav .nav-cta{position:absolute;right:0;top:12px;font-size:.85rem}
+}
+@media (max-width:420px){.site-nav nav{gap:12px;font-size:.8rem}}

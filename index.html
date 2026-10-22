@@ -16,7 +16,7 @@
 </head>
 <body>
 
-<header class="hero">
+<div class="site-nav">
   <div class="wrap">
     <div class="topbar">
       <a class="lockup" href="#top" aria-label="FSN Prime, naar boven"><img src="/assets/fsn-prime-lockup.png" alt="Financial Systems Network | PRIME"></a>
@@ -28,6 +28,11 @@
         <a class="nav-cta" href="https://scheduler.recruitcrm.io/scheduler?config_id=fa96d1b8-2f5f-4f34-b53d-71d1555472fd" target="_blank" rel="noopener">Plan een gesprek</a>
       </nav>
     </div>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
     <div class="hero-grid" id="top">
       <div class="hero-copy">
         <p class="campaign">Own your book. Grow your share.</p>
@@ -312,5 +317,6 @@
   </div>
 </footer>
 
+<script>(function(){var n=document.querySelector('.site-nav');function f(){n.classList.toggle('scrolled',window.scrollY>8);}window.addEventListener('scroll',f,{passive:true});f();})();</script>
 </body>
 </html>
