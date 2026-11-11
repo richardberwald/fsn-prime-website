@@ -260,3 +260,5 @@ section[id],[id="top"]{scroll-margin-top:96px}
   .site-nav.open .menu-toggle span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
   section[id]{scroll-margin-top:80px}
 }
+.member{display:flex;flex-direction:column}
+.member a{margin-top:auto;padding-top:8px;align-self:flex-start}
