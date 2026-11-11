@@ -51,6 +51,15 @@
   </div>
 </header>
 
+<section class="ticker" id="ticker" hidden aria-label="FSN Prime in cijfers">
+  <div class="wrap"><div class="ticker-row">
+    <span class="live"><i></i>Live uit ons systeem</span>
+    <div class="tk-stat"><b id="tk-partners">0</b><span>partners actief</span></div>
+    <div class="tk-stat"><b id="tk-talks">0</b><span>recruiters in gesprek</span></div>
+    <span class="upd" id="tk-upd"></span>
+  </div></div>
+</section>
+
 <main>
 
 <section class="story" aria-labelledby="h-story">
@@ -322,5 +331,6 @@
 
 <script>(function(){var n=document.querySelector('.site-nav');function f(){n.classList.toggle('scrolled',window.scrollY>8);}window.addEventListener('scroll',f,{passive:true});f();})();</script>
 <script>(function(){var t=document.querySelector('.menu-toggle'),n=document.querySelector('.site-nav');if(!t)return;function set(o){n.classList.toggle('open',o);t.setAttribute('aria-expanded',o);t.setAttribute('aria-label',o?'Menu sluiten':'Menu openen');}t.addEventListener('click',function(){set(!n.classList.contains('open'));});n.querySelectorAll('nav a').forEach(function(a){a.addEventListener('click',function(){set(false);});});document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();</script>
+<script>(function(){fetch('/api/stats').then(function(r){return r.json();}).then(function(d){if(!d.ok||d.partners<3)return;document.getElementById('tk-partners').textContent=d.partners;document.getElementById('tk-talks').textContent=d.inTalks;var u=new Date(d.updated);document.getElementById('tk-upd').textContent='bijgewerkt op '+u.toLocaleDateString('nl-NL',{day:'numeric',month:'long'});document.getElementById('ticker').hidden=false;}).catch(function(){});})();</script>
 </body>
 </html>
